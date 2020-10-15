@@ -1,0 +1,24 @@
+.information {
+  display: flex;
+  flex-direction: column;
+}
+
+.letter {
+  color: gold;
+  font-weight: 500;
+  font-size: 4rem;
+}
+
+.letters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 40vw;
+}
+
+.line {
+  height: 3px;
+  width: 100%;
+  background-color: gold;
+  transform-origin: center 0;
+}
