@@ -1,13 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import anime from "animejs";
-import Intro from "./ClaudeShannon/Intro";
+import "./App.scss";
+import AnimationFrame from "./common/animationFrame";
+
+import { ClaudeShannon } from "./animations";
 
 function App() {
   return (
     <div className="App">
-      <Intro />
+      <AnimationFrame animations={[ClaudeShannon]} />
     </div>
   );
 }

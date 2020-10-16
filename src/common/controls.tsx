@@ -27,6 +27,7 @@ function Controls({ timelineRef }: IControlsProps) {
         />
       </div>
       <button
+        className="btn btn-primary"
         onClick={() => {
           timelineRef.current.play();
         }}
@@ -34,6 +35,7 @@ function Controls({ timelineRef }: IControlsProps) {
         Play
       </button>
       <button
+        className="btn btn-primary"
         onClick={() => {
           timelineRef.current.pause();
         }}
@@ -41,6 +43,7 @@ function Controls({ timelineRef }: IControlsProps) {
         Pause
       </button>
       <button
+        className="btn btn-primary"
         onClick={() => {
           timelineRef.current.restart();
         }}
