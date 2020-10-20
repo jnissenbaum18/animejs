@@ -7,8 +7,6 @@ import AnimationSelector from "./animationSelector";
 import "./animationFrame.scss";
 
 interface IAnimationFrameProps {
-  //   animationTimeline: (animationRef: any) => void;
-  //   animationComponent: FunctionComponent;
   animations: IAnimationList[];
 }
 
@@ -16,14 +14,21 @@ const AnimationFrame: FunctionComponent<IAnimationFrameProps> = ({
   children,
   animations,
 }) => {
+  const defaultAnimation = animations
+    .find(({ listTitle }) => listTitle === "Common")
+    ?.animationList.find(({ title }) => title === "Sandbox");
   const [currentAnim, setCurrentAnim] = useState<IAnimation>({
     title: "",
-    timeline: () => {
-      return () => {};
-    },
-    component: () => {
-      return <div></div>;
-    },
+    timeline: defaultAnimation?.timeline
+      ? defaultAnimation.timeline
+      : () => {
+          return () => {};
+        },
+    component: defaultAnimation?.component
+      ? defaultAnimation.component
+      : () => {
+          return <div></div>;
+        },
   });
   const animationRef = React.useRef(anime({}));
   React.useEffect(() => {

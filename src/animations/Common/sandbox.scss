@@ -1,0 +1,25 @@
+.sandbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .information {
+    // overflow: hidden;
+    border: solid red 1px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    .letters {
+      display: flex;
+      flex-direction: column;
+      //   top: -400%;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      width: 3em;
+      .letter {
+        height: 60px;
+        line-height: 1;
+      }
+    }
+  }
+}

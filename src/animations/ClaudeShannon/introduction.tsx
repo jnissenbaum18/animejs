@@ -1,7 +1,7 @@
 import React, { FunctionComponent, EffectCallback } from "react";
 import anime from "animejs";
 import { IAnimation } from "../../types";
-import "./Intro.scss";
+import "./introduction.scss";
 
 const title = "Intro";
 
@@ -13,7 +13,7 @@ const timeline = (animationRef: any) => {
         targets: ".words .what",
         opacity: [0, 1],
         duration: 800,
-        easing: "easeInOutExpo",
+        easing: "easeOutExpo",
       },
       400
     )

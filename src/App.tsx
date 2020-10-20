@@ -2,12 +2,12 @@ import React from "react";
 import "./App.scss";
 import AnimationFrame from "./common/animationFrame";
 
-import { ClaudeShannon } from "./animations";
+import { ClaudeShannon, Common } from "./animations";
 
 function App() {
   return (
     <div className="App">
-      <AnimationFrame animations={[ClaudeShannon]} />
+      <AnimationFrame animations={[ClaudeShannon, Common]} />
     </div>
   );
 }
