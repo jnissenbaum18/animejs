@@ -2,70 +2,271 @@ import React, { FunctionComponent, EffectCallback } from "react";
 import anime from "animejs";
 import { IAnimation } from "../../types";
 import "./introduction.scss";
+import { convertStringToBinary, IBinaryLetterPair } from "../../utils/string";
 
 const title = "Intro";
+
+const letterDuration = 500;
 
 const timeline = (animationRef: any) => {
   animationRef.current = anime
     .timeline({})
     .add(
       {
-        targets: ".words .what",
-        opacity: [0, 1],
-        duration: 800,
-        easing: "easeOutExpo",
+        targets: ".W",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
       },
-      400
+      letterDuration
     )
-    .add({
-      targets: ".words .is",
-      opacity: [0, 1],
-      duration: 800,
-      easing: "easeInOutExpo",
-    })
-    .add({
-      targets: ".letters .letter",
-      opacity: [0, 1],
-      duration: anime.stagger(200, { start: 1200 }),
-      easing: "easeInOutExpo",
-    })
     .add(
       {
-        targets: ".line",
-        scaleX: [0, 1],
-        easing: "easeInOutExpo",
+        targets: ".H",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
       },
-      "-=2000"
+      letterDuration * 3
+    )
+    .add(
+      {
+        targets: ".A",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration
+    )
+    .add(
+      {
+        targets: ".T",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 3
+    )
+    .add(
+      {
+        targets: ".space",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 4
+    )
+    .add(
+      {
+        targets: ".I",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 2
+    )
+    .add(
+      {
+        targets: ".S",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 4
+    )
+    .add(
+      {
+        targets: ".N",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration
+    )
+    .add(
+      {
+        targets: ".F",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 2
+    )
+    .add(
+      {
+        targets: ".O",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 4
+    )
+    .add(
+      {
+        targets: ".R",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 2
+    )
+    .add(
+      {
+        targets: ".M",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+          { translateY: ["600px", "700px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 3
+    )
+    .add(
+      {
+        targets: ".question",
+        keyframes: [
+          { translateY: ["-100px", "0px"], duration: letterDuration },
+          { translateY: ["0px", "100px"], duration: letterDuration },
+          { translateY: ["100px", "200px"], duration: letterDuration },
+          { translateY: ["200px", "300px"], duration: letterDuration },
+          { translateY: ["300px", "400px"], duration: letterDuration },
+          { translateY: ["400px", "500px"], duration: letterDuration },
+          { translateY: ["500px", "600px"], duration: letterDuration },
+        ],
+        easing: "easeOutBounce",
+      },
+      letterDuration * 6
     );
 };
 
 const component = () => {
+  const words = "WHAT IS INFORMATION?";
+  const wordsMap: { [key: string]: IBinaryLetterPair } = convertStringToBinary(
+    words
+  );
   return (
     <div className="intro">
-      <div className="words">
-        <div className="word what letter">What&nbsp;</div>
-      </div>
-      <div className="words">
-        <div className="word is letter">is&nbsp;</div>
-      </div>
-      <div className="information">
-        <div className="line" />
-        <div className="letters">
-          <div className="letter">I</div>
-          <div className="letter">N</div>
-          <div className="letter">F</div>
-          <div className="letter">O</div>
-          <div className="letter">R</div>
-          <div className="letter">M</div>
-          <div className="letter">A</div>
-          <div className="letter">T</div>
-          <div className="letter">I</div>
-          <div className="letter">O</div>
-          <div className="letter">N</div>
-          <div className="letter">?</div>
-        </div>
-        <div className="line" />
-      </div>
+      {Object.entries(wordsMap).map((entry, index) => {
+        let { letter, binary } = entry[1];
+        const display = [letter, ...binary.split("")];
+        if (letter === " ") {
+          letter = "space";
+        }
+        if (letter === "?") {
+          letter = "question";
+        }
+        return (
+          <div key={`${index}-${letter}`} className={`${letter}`}>
+            {display.map((item, idx) => {
+              if (letter === "space") {
+                return <div>&nbsp</div>;
+              }
+              return (
+                <div
+                  key={`${index}-${letter}-${idx}`}
+                  className={`letter ${index}-${letter}-${item}`}
+                >
+                  {item}
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 };

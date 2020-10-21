@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .information {
-    // overflow: hidden;
-    border: solid red 1px;
-    height: 60px;
+  .intro {
+    align-items: flex-end;
+    overflow: hidden;
+    // border: solid red 1px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     .letters {
@@ -16,10 +17,6 @@
       justify-content: center;
       align-items: center;
       width: 3em;
-      .letter {
-        height: 60px;
-        line-height: 1;
-      }
     }
   }
 }

@@ -9,7 +9,7 @@ interface IControlsProps {
 function Controls({ timelineRef }: IControlsProps) {
   const [timelineValue, setTimelineValue] = useState(0);
   return (
-    <div className="Controls">
+    <div className="controls">
       <div className="timeline controls">
         <input
           className="progress"
