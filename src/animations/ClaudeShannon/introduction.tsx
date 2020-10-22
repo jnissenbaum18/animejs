@@ -6,7 +6,12 @@ import { convertStringToBinary, IBinaryLetterPair } from "../../utils/string";
 
 const title = "Intro";
 
+const letterOffset = 500;
+
 const letterDuration = 500;
+
+// const easing = "easeOutBounce";
+const easing = "easeOutQuad";
 
 const timeline = (animationRef: any) => {
   animationRef.current = anime
@@ -24,9 +29,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration
+      letterOffset * 4
     )
     .add(
       {
@@ -41,9 +46,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 3
+      letterOffset * 3
     )
     .add(
       {
@@ -58,9 +63,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration
+      letterOffset * 5
     )
     .add(
       {
@@ -75,9 +80,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 3
+      letterOffset * 6
     )
     .add(
       {
@@ -92,9 +97,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 4
+      letterOffset * 2
     )
     .add(
       {
@@ -109,9 +114,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 2
+      letterOffset * 7
     )
     .add(
       {
@@ -126,9 +131,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 4
+      letterOffset
     )
     .add(
       {
@@ -143,9 +148,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration
+      letterOffset * 5
     )
     .add(
       {
@@ -160,9 +165,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 2
+      letterOffset * 4
     )
     .add(
       {
@@ -177,9 +182,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 4
+      letterOffset * 7
     )
     .add(
       {
@@ -194,9 +199,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 2
+      letterOffset * 6
     )
     .add(
       {
@@ -211,9 +216,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["500px", "600px"], duration: letterDuration },
           { translateY: ["600px", "700px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 3
+      letterOffset * 5
     )
     .add(
       {
@@ -227,9 +232,9 @@ const timeline = (animationRef: any) => {
           { translateY: ["400px", "500px"], duration: letterDuration },
           { translateY: ["500px", "600px"], duration: letterDuration },
         ],
-        easing: "easeOutBounce",
+        easing,
       },
-      letterDuration * 6
+      letterOffset * 8
     );
 };
 

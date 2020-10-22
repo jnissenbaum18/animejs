@@ -1,97 +1,97 @@
 import React, { FunctionComponent, EffectCallback } from "react";
 import anime from "animejs";
 import { IAnimation } from "../../types";
-import "./sandbox.scss";
+import "./introduction.scss";
 import { convertStringToBinary, IBinaryLetterPair } from "../../utils/string";
 
-const title = "Sandbox";
+const title = "Intro-v3";
 
-const letterOffset = 500;
+const offset = 500;
 
-const letterDuration = 300;
+const duration = 300;
 
 const easing = "easeInOutQuart";
 
 const keyframes = [
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["0px", "100px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["100px", "200px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["200px", "300px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["300px", "400px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["400px", "500px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["500px", "600px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
   {
-    duration: letterDuration,
+    duration,
     opacity: [1, 0],
     easing,
   },
   { translateY: ["600px", "700px"] },
   {
-    duration: letterDuration,
+    duration,
     opacity: [0, 1],
     easing,
   },
@@ -105,91 +105,91 @@ const timeline = (animationRef: any) => {
         targets: ".W",
         keyframes: [
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["0px", "100px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["100px", "200px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["200px", "300px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["300px", "400px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["400px", "500px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["500px", "600px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["600px", "700px"] },
           {
-            duration: letterDuration * 3,
+            duration: duration * 3,
             opacity: [0, 1],
 
             easing,
           },
         ],
       },
-      letterOffset * 8
+      offset * 8
     )
     .add(
       {
@@ -197,7 +197,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 6
+      offset * 6
     )
     .add(
       {
@@ -205,7 +205,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 5
+      offset * 5
     )
     .add(
       {
@@ -213,7 +213,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 6
+      offset * 6
     )
     .add(
       {
@@ -221,7 +221,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 4
+      offset * 4
     )
     .add(
       {
@@ -229,7 +229,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 6
+      offset * 3
     )
     .add(
       {
@@ -237,7 +237,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset
+      offset
     )
     .add(
       {
@@ -245,7 +245,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 4
+      offset * 4
     )
     .add(
       {
@@ -253,98 +253,98 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 5
+      offset * 5
     )
     .add(
       {
         targets: ".O",
         keyframes: [
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["0px", "100px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["100px", "200px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["200px", "300px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["300px", "400px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["400px", "500px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["500px", "600px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["600px", "700px"] },
           {
-            duration: letterDuration * 2,
+            duration,
             opacity: [0, 1],
             easing,
           },
         ],
         easing,
       },
-      letterOffset * 7
+      offset * 4
     )
     .add(
       {
@@ -352,7 +352,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 7
+      offset * 7
     )
     .add(
       {
@@ -360,86 +360,86 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      letterOffset * 3
+      offset * 3
     )
     .add(
       {
         targets: ".question",
         keyframes: [
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["0px", "100px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["100px", "200px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["200px", "300px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["300px", "400px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["400px", "500px"] },
           {
-            duration: letterDuration,
+            duration,
             opacity: [0, 1],
             easing,
           },
           {
-            duration: letterDuration,
+            duration,
             opacity: [1, 0],
             easing,
           },
           { translateY: ["500px", "600px"] },
           {
-            duration: letterDuration * 4,
+            duration: duration * 4,
             opacity: [0, 1],
             easing: "easeInOutExpo",
           },
         ],
       },
-      letterOffset * 10
+      offset * 10
     );
 };
 
@@ -449,33 +449,31 @@ const component = () => {
     words
   );
   return (
-    <div className="sandbox">
-      <div className="intro">
-        {Object.entries(wordsMap).map((entry, index) => {
-          let { letter, binary } = entry[1];
-          const display = [letter, ...binary.split("")];
-          if (letter === " ") {
-            letter = "space";
-          }
-          if (letter === "?") {
-            letter = "question";
-          }
-          return (
-            <div key={`${index}-${letter}`} className={`${letter}`}>
-              {display.map((item, idx) => {
-                return (
-                  <div
-                    key={`${index}-${letter}-${idx}`}
-                    className={`letter ${index}-${letter}-${item}`}
-                  >
-                    {item}
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
+    <div className="intro">
+      {Object.entries(wordsMap).map((entry, index) => {
+        let { letter, binary } = entry[1];
+        const display = [letter, ...binary.split("")];
+        if (letter === " ") {
+          letter = "space";
+        }
+        if (letter === "?") {
+          letter = "question";
+        }
+        return (
+          <div key={`${index}-${letter}`} className={`${letter}`}>
+            {display.map((item, idx) => {
+              return (
+                <div
+                  key={`${index}-${letter}-${idx}`}
+                  className={`letter ${index}-${letter}-${item}`}
+                >
+                  {item}
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 };
