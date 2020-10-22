@@ -221,7 +221,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      offset * 4
+      offset * 5
     )
     .add(
       {
@@ -229,7 +229,7 @@ const timeline = (animationRef: any) => {
         keyframes,
         easing,
       },
-      offset * 3
+      offset * 6
     )
     .add(
       {
