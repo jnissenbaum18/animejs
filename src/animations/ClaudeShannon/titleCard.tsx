@@ -1,10 +1,10 @@
-import React, { FunctionComponent, EffectCallback } from "react";
+import React from "react";
 import anime from "animejs";
 import { IAnimation } from "../../types";
-import "./sandbox.scss";
+import "./titleCard.scss";
 import { convertStringToBinary, IBinaryLetterPair } from "../../utils/string";
 
-const title = "Sandbox";
+const title = "title card";
 
 const letterOffset = 500;
 

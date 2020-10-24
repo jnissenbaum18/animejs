@@ -1,0 +1,16 @@
+.title-card {
+  .title-card__row {
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    // border: solid red 1px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+  }
+  .line {
+    height: 3px;
+    background-color: greenyellow;
+    transform-origin: 0.5 0;
+  }
+}

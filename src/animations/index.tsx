@@ -4,6 +4,7 @@ import sandboxAnimation from "./Common/sandbox";
 import claudeShannonIntro from "./ClaudeShannon/introduction";
 import claudeShannonIntroV2 from "./ClaudeShannon/introduction-v2";
 import claudeShannonIntroV3 from "./ClaudeShannon/introduction-v3";
+import titleCard from "./ClaudeShannon/titleCard";
 
 //Common
 export const Common: IAnimationList = {
@@ -18,5 +19,6 @@ export const ClaudeShannon: IAnimationList = {
     claudeShannonIntro,
     claudeShannonIntroV2,
     claudeShannonIntroV3,
+    titleCard,
   ],
 };
