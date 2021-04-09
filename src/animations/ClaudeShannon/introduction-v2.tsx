@@ -1,4 +1,4 @@
-import React, { FunctionComponent, EffectCallback } from "react";
+import React from "react";
 import anime from "animejs";
 import { IAnimation } from "../../types";
 import "./introduction.scss";

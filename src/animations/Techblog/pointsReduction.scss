@@ -1,0 +1,36 @@
+.points-container {
+  height: 600px;
+  .line {
+    transform-origin: bottom left;
+    background-color: greenyellow;
+  }
+  .label {
+    color: greenyellow;
+    position: relative;
+    font-weight: 700;
+  }
+  .circle {
+    width: 6px;
+    height: 6px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+  .point {
+    position: relative;
+  }
+  .x-axis {
+    height: 500px;
+    width: 2px;
+  }
+  .y-axis {
+    width: 500px;
+    height: 2px;
+  }
+  .x-axis-label {
+  }
+  .y-axis-label {
+    top: -285px;
+    left: -262px;
+    transform: rotate(-90deg);
+  }
+}

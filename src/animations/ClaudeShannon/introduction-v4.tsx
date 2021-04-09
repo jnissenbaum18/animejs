@@ -1,10 +1,10 @@
 import React from "react";
 import anime from "animejs";
 import { IAnimation } from "../../types";
-import "./sandbox.scss";
+import "./introduction.scss";
 import { convertStringToBinary, IBinaryLetterPair } from "../../utils/string";
 
-const title = "Sandbox";
+const title = "Intro-v4";
 
 const letterOffset = 500;
 
@@ -440,70 +440,68 @@ const component = () => {
     [key: string]: IBinaryLetterPair;
   } = convertStringToBinary(wordsLower);
   return (
-    <div className="sandbox">
-      <div className="title-card">
-        <div className="line line-upper"></div>
-        <div className="title-card__row title-card__row-upper">
-          {Object.entries(wordsMapUpper).map((entry, index) => {
-            let { letter, binary } = entry[1];
-            const display = [letter, ...binary.split("")];
-            if (letter === " ") {
-              letter = "space";
-            }
-            if (letter === "?") {
-              letter = "question";
-            }
-            return (
-              <div
-                key={`${index}-${letter}`}
-                className={`${letter.toLowerCase()}`}
-              >
-                {display.map((item, idx) => {
-                  return (
-                    <div
-                      key={`${index}-${letter}-${idx}`}
-                      className={`letter ${index}-${letter.toLowerCase()}-${item}`}
-                    >
-                      {item}
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="title-card__row title-card__row-lower">
-          {Object.entries(wordsMapLower).map((entry, index) => {
-            let { letter, binary } = entry[1];
-            const display = [letter, ...binary.split("")];
-            if (letter === " ") {
-              letter = "space";
-            }
-            if (letter === "?") {
-              letter = "question";
-            }
-            return (
-              <div
-                key={`${index}-${letter}`}
-                className={`${letter.toLowerCase()}`}
-              >
-                {display.map((item, idx) => {
-                  return (
-                    <div
-                      key={`${index}-${letter}-${idx}`}
-                      className={`letter ${index}-${letter.toLowerCase()}-${item}`}
-                    >
-                      {item}
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-        <div className="line line-lower"></div>
+    <div className="title-card">
+      <div className="line line-upper"></div>
+      <div className="title-card__row title-card__row-upper">
+        {Object.entries(wordsMapUpper).map((entry, index) => {
+          let { letter, binary } = entry[1];
+          const display = [letter, ...binary.split("")];
+          if (letter === " ") {
+            letter = "space";
+          }
+          if (letter === "?") {
+            letter = "question";
+          }
+          return (
+            <div
+              key={`${index}-${letter}`}
+              className={`${letter.toLowerCase()}`}
+            >
+              {display.map((item, idx) => {
+                return (
+                  <div
+                    key={`${index}-${letter}-${idx}`}
+                    className={`letter ${index}-${letter.toLowerCase()}-${item}`}
+                  >
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
+
+      <div className="title-card__row title-card__row-lower">
+        {Object.entries(wordsMapLower).map((entry, index) => {
+          let { letter, binary } = entry[1];
+          const display = [letter, ...binary.split("")];
+          if (letter === " ") {
+            letter = "space";
+          }
+          if (letter === "?") {
+            letter = "question";
+          }
+          return (
+            <div
+              key={`${index}-${letter}`}
+              className={`${letter.toLowerCase()}`}
+            >
+              {display.map((item, idx) => {
+                return (
+                  <div
+                    key={`${index}-${letter}-${idx}`}
+                    className={`letter ${index}-${letter.toLowerCase()}-${item}`}
+                  >
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+      <div className="line line-lower"></div>
     </div>
   );
 };

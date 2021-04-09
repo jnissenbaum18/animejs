@@ -1,4 +1,4 @@
-import React, { FunctionComponent, EffectCallback, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import anime from "animejs";
 import { IAnimationList, IAnimation } from "../types";
 import Controls from "./controls";
@@ -8,15 +8,19 @@ import "./animationFrame.scss";
 
 interface IAnimationFrameProps {
   animations: IAnimationList[];
+  defaultListTitle: string;
+  defaultAnimationTitle: string;
 }
 
 const AnimationFrame: FunctionComponent<IAnimationFrameProps> = ({
   children,
   animations,
+  defaultListTitle,
+  defaultAnimationTitle,
 }) => {
   const defaultAnimation = animations
-    .find(({ listTitle }) => listTitle === "Common")
-    ?.animationList.find(({ title }) => title === "Sandbox");
+    .find(({ listTitle }) => listTitle === defaultListTitle)
+    ?.animationList.find(({ title }) => title === defaultAnimationTitle);
   const [currentAnim, setCurrentAnim] = useState<IAnimation>({
     title: "",
     timeline: defaultAnimation?.timeline
