@@ -7,9 +7,10 @@ import "./pointsReduction.scss";
 interface IPOINT {
   x: number;
   y: number;
+  idx?: number;
 }
 
-const title = "Points-Reduction";
+const title = "Points-Reduction-2";
 
 const baseDuration = 300;
 
@@ -42,53 +43,37 @@ const timeline = (animationRef: any) => {
   animeTimeline.add({
     duration: 1000,
   });
+
+  const buckets: IPOINT[][] = [];
+  let bucket: IPOINT[] = [];
+
   initialPoints.forEach((point, idx) => {
-    animeTimeline.add(
-      {
-        targets: `.point-${idx}`,
-        opacity: [0, 1],
-        easing: "easeInQuart",
-        duration: baseDuration,
-      },
-      `-=${baseDuration / 2}`
-    );
+    bucket.push({ ...point, idx });
+    if (bucket.length === 5) {
+      buckets.push(bucket);
+      bucket = [];
+    }
   });
-  animeTimeline
-    .add({
-      targets: ".x-axis",
-      scaleY: [0, 1],
-      translateY: 20,
-      easing: "easeInOutExpo",
-      duration: baseDuration * 3,
-    })
-    .add(
-      {
-        targets: ".y-axis",
-        scaleX: [0, 1],
-        translateX: -20,
-        duration: baseDuration * 3,
-        easing: "easeInOutExpo",
-      },
-      `-=${baseDuration * 3}`
-    )
-    .add(
-      {
-        targets: ".y-axis-label",
-        opacity: [0, 1],
-        duration: baseDuration * 3,
-        easing: "easeInOutExpo",
-      },
-      `-=${baseDuration}`
-    )
-    .add(
-      {
-        targets: ".x-axis-label",
-        opacity: [0, 1],
-        duration: baseDuration * 3,
-        easing: "easeInOutExpo",
-      },
-      `-=${baseDuration * 3}`
-    );
+
+  buckets.forEach((points) => {
+    const xAvg = points.reduce((acc, { x }) => acc + x, 0) / points.length;
+    const yAvg = points.reduce((acc, { y }) => acc + y, 0) / points.length;
+    points.forEach(({ x, y, idx }) => {
+      console.log(yAvg, y, (y - yAvg) * 3, idx);
+      const index: number = idx as number;
+      animeTimeline.add(
+        {
+          targets: `.point-${idx}`,
+          translateX: (xAvg - x) * 22 + 20,
+          translateY: (y - yAvg) * 3 - index * 6,
+          backgroundColor: "#ff1493",
+          easing: "easeInQuart",
+          duration: baseDuration * 4,
+        },
+        `-=${baseDuration * 4}`
+      );
+    });
+  });
 
   animationRef.current = animeTimeline;
 };

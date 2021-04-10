@@ -6,6 +6,8 @@ import claudeShannonIntroV2 from "./ClaudeShannon/introduction-v2";
 import claudeShannonIntroV3 from "./ClaudeShannon/introduction-v3";
 import claudeShannonIntroV4 from "./ClaudeShannon/introduction-v4";
 import pointsReduction from "./Techblog/pointsReduction";
+import pointsReduction2 from "./Techblog/pointsReduction-2";
+import pointsReduction3 from "./Techblog/pointsReduction-3";
 import titleCard from "./ClaudeShannon/titleCard";
 
 //Common
@@ -29,5 +31,5 @@ export const ClaudeShannon: IAnimationList = {
 //ClaudeShannon
 export const TechBlog: IAnimationList = {
   listTitle: "Tech Blog",
-  animationList: [pointsReduction],
+  animationList: [pointsReduction, pointsReduction2, pointsReduction3],
 };

@@ -10,7 +10,7 @@ function App() {
       <AnimationFrame
         animations={[ClaudeShannon, Common, TechBlog]}
         defaultListTitle={"Tech Blog"}
-        defaultAnimationTitle={"Points-Reduction"}
+        defaultAnimationTitle={"Points-Reduction-3"}
       />
     </div>
   );
